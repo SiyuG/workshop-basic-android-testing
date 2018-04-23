@@ -25,7 +25,7 @@ public class RecipeTest {
 
     }public  void i_can_read_data_from_mixed(){
         InputStream stream
-                = RecipeTest.class.getResourceAsStream("/recipes/water.txt");
+                = RecipeTest.class.getResourceAsStream("/punch.txt");
         Recipe recipe = Recipe.readFromStream(stream);
 
         assertNotNull(recipe);
@@ -42,6 +42,16 @@ public class RecipeTest {
                 "Mix all together and strain. Add large piece of ice.",recipe.description);
 
     }
+    public void  i_can_read_data_from_no_id(){
+        InputStream stream
+                =RecipeTest.class.getResourceAsStream("/water.txt");
+        Recipe recipe=Recipe.readFromStream(stream);
+         assertNotNull(recipe);
+         assertEquals("water",recipe.title);
+         assertEquals("title=Water\n" +
+                 "Put glass under tap. Open tap. Close tap. Drink.",recipe.description);
+    }
+
 
 
 

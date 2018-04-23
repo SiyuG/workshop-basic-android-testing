@@ -54,4 +54,30 @@ public void show_detail_of_chocolate_pudding(){
                     "Cook until it thickens, beat whites of eggs and put on top, put in oven to brown. Serve with cream, if preferred."))));
 
 
+}
+public void show_detail_of_creamed_carrot(){
+    Intent intent=new Intent();
+    intent.putExtra(RecipeActivity.KEY_ID,"Cream Carrot");
+    activityRule.launchActivity(intent);
+
+    onView(withId(R.id.title))
+            .check(matches(withText("Cream Carrot")));
+    onView(withId(R.id.description))
+            .check(matches(withText("id=creamed_carrots\n"+"title=Creamed Carrots\n"+"Peel and dice carrots, cook in salt water until tender, remove from stove and drain. Fry 4 slides of bacon, drain off a part of grease, cut bacon in small slices, add carrots, 2 tablespoons of flour, stir all together, add 1 cup of sweet cream, salt and pepper to taste.\n")));
+}
+public void show_detail_of_deviled_eggs(){
+    Intent intent=new Intent();
+    intent.putExtra(RecipeActivity.KEY_ID,"Deviled Eggs");
+    activityRule.launchActivity(intent);
+
+    onView(withId(R.id.title))
+            .check(matches(withText("Deviled Eggs")));
+    onView(withId(R.id.description))
+            .check(matches(withText("id=deviled_eggs\n" +
+                    "title=Deviled Eggs\n" +
+                    "Boil fresh eggs until hard, remove shells, cut into halves lengthwise, remove yolks and mash very fine. Season with melted butter, pepper, salt, sugar and a little vinegar or prepared salad dressing may be used if preferred. Stuff eggs and in the center of each put a stuffed olive.\n")));
+
+
+
+
 }}
